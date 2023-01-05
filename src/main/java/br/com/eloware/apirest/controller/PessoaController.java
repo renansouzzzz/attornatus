@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.eloware.apirest.model.Pessoa;
 import br.com.eloware.apirest.repository.PessoaRepository;
-import br.com.eloware.apirest.servicos.PessoaServico;
+import br.com.eloware.apirest.services.PessoaServico;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 

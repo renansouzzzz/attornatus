@@ -1,4 +1,4 @@
-package br.com.eloware.apirest.servicos;
+package br.com.eloware.apirest.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
