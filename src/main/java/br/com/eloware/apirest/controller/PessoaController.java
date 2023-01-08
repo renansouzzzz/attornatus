@@ -1,25 +1,20 @@
 package br.com.eloware.apirest.controller;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.eloware.apirest.model.Endereco;
 import br.com.eloware.apirest.model.Pessoa;
 import br.com.eloware.apirest.repository.PessoaRepository;
 import br.com.eloware.apirest.services.PessoaServico;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -59,7 +54,12 @@ public class PessoaController {
 	}
 	
 	@GetMapping("/listarenderecos/{id}")
-	public Object listarEnderecos(@PathVariable Long id, Pessoa pessoa) {
-		return servico.listarEnderecos(id, pessoa);
+	public List<Endereco> listarEnderecos(@PathVariable Long id) {
+		return servico.listarEnderecos(id);
+	}
+	
+	@GetMapping("/enderecoprincipal/{id}")
+	public Object informarEnderecoPrincipal(@PathVariable Long id){
+		return servico.informarEnderecoPrincipal(id);
 	}
 }

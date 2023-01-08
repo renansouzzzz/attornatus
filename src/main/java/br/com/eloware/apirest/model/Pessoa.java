@@ -4,12 +4,10 @@ import java.util.List;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import org.hibernate.annotations.Parameter;
-import org.springframework.data.repository.query.Param;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,9 +37,9 @@ public class Pessoa {
 	
 	@Column(nullable = false)
 	@Embedded
+	@ElementCollection
 	private List<Endereco> endereco;
-	
-	
+		
 
 	public Long getId() {
 		return id;
