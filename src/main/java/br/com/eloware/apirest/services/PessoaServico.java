@@ -15,7 +15,7 @@ public class PessoaServico {
 	
 	@Autowired
 	private PessoaRepository repository;
-	@Test
+	
 	public Pessoa editarPessoa(Long id, Pessoa pessoa) {
 		
 		Pessoa novaPessoa = repository.findById(id).get();
