@@ -28,37 +28,36 @@ public class PessoaController {
 	
 	@Autowired
 	private PessoaServico servico;
-	@Test
 	@PostMapping
 	public Pessoa criarPessoa(@RequestBody Pessoa pessoa) {
 		return pessoaRepository.save(pessoa);
 	}
-	@Test
+	
 	@GetMapping
 	public List<Pessoa> listarPessoas(){
 		return pessoaRepository.findAll();
 	}
-	@Test
+	
 	@PutMapping("/{id}")
 	public Pessoa editarPessoa(@PathVariable Long id, @RequestBody Pessoa pessoa) {
 		return servico.editarPessoa(id, pessoa);
 	}
-	@Test
+	
 	@GetMapping("/{id}")
 	public Pessoa buscarPessoa(@PathVariable Long id) {
 		return pessoaRepository.findById(id).get();
 	}
-	@Test
+	
 	@PostMapping("/criarendereco/{id}")
 	public Object criarEndereco(@PathVariable Long id, @RequestBody Pessoa pessoa) {
 		return servico.criarEndereco(id, pessoa);
 	}
-	@Test
+	
 	@GetMapping("/listarenderecos/{id}")
 	public List<Endereco> listarEnderecos(@PathVariable Long id) {
 		return servico.listarEnderecos(id);
 	}
-	@Test
+	
 	@GetMapping("/enderecoprincipal/{id}")
 	public Object informarEnderecoPrincipal(@PathVariable Long id){
 		return servico.informarEnderecoPrincipal(id);
