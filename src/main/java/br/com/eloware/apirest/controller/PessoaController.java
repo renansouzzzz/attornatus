@@ -28,6 +28,7 @@ public class PessoaController {
 	
 	@Autowired
 	private PessoaServico servico;
+	
 	@PostMapping
 	public Pessoa criarPessoa(@RequestBody Pessoa pessoa) {
 		return pessoaRepository.save(pessoa);
