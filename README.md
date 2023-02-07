@@ -1,5 +1,5 @@
 
-# Eloware - Perguntas & Respostas
+# Attornatus - Perguntas & Respostas
 
 1.	Durante a implementação de uma nova funcionalidade de software solicitada, quais critérios você avalia e implementa para garantia de qualidade de software?
 
