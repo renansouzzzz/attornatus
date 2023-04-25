@@ -23,24 +23,24 @@ import lombok.NoArgsConstructor;
 @DynamicUpdate
 @DynamicInsert
 @Entity
-public class Pessoa {
+public class Person {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column
-	private String nome;
+	private String name;
 
 	@Column
-	private String dataNascimento;
+	private String birthDate;
 	
 	@Column(nullable = false)
 	@Embedded
 	@ElementCollection
-	private List<Endereco> endereco;
+	private List<Address> address;
 		
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -49,27 +49,35 @@ public class Pessoa {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDataNascimento() {
-		return dataNascimento;
+	public String getBirthDate() {
+		return birthDate;
 	}
 
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 
-	public List<Endereco> getEndereco() {
-		return endereco;
+	public List<Address> getAddress() {
+		return address;
 	}
 
-	public void setEndereco(List<Endereco> endereco) {
-		this.endereco = endereco;
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
+
+	public List<Address> getAdress() {
+		return address;
+	}
+
+	public void setEndereco(List<Address> endereco) {
+		this.address = endereco;
 	}
 }
