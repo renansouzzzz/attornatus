@@ -54,7 +54,7 @@ public class PersonController {
 	}
 	
 	@PostMapping("/create-address/{id}")
-	public ResponseEntity<Object> criarEndereco(@PathVariable Long id, @RequestBody Person person) {
+	public ResponseEntity<Object> createAddress(@PathVariable Long id, @RequestBody Person person) {
 		
 		return ResponseEntity.accepted().body(service.createAddress(id, person));
 	}
